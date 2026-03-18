@@ -402,7 +402,7 @@ export default function RiseRoute() {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
-            model: "claude-sonnet-4-20250514",
+            model: "claude-sonnet-4-5",
             max_tokens: 1000,
             messages: [{
               role: "user",
@@ -416,7 +416,7 @@ Make it actionable, realistic, and include estimated timeframes. Use emojis for 
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
-            model: "claude-sonnet-4-20250514",
+            model: "claude-sonnet-4-5",
             max_tokens: 1000,
             messages: [{
               role: "user",
@@ -466,7 +466,6 @@ Use emojis and make it engaging. Keep it under 500 words.`,
       background: "#050a0f",
       fontFamily: "'Sora', 'DM Sans', system-ui, sans-serif",
       color: "#e8eaf0",
-      overflow: "hidden",
       position: "relative",
     }}>
       {/* Import fonts */}
