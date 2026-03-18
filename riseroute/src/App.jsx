@@ -629,7 +629,7 @@ Use emojis and make it engaging. Keep it under 500 words.`,
           borderBottom: "1px solid rgba(255,255,255,0.06)",
           backdropFilter: "blur(20px)",
           background: "rgba(5,10,15,0.8)",
-          position: "sticky", top: 0, zIndex: 100,
+          position: "absolute", top: 0, zIndex: 100,
         }}>
           <div style={{ display: "flex", alignItems: "center", gap: "12px", cursor: "pointer" }} onClick={handleBack}>
             <div style={{
@@ -901,12 +901,25 @@ Use emojis and make it engaging. Keep it under 500 words.`,
                         borderRadius: "16px", padding: "20px", display: "flex", gap: "20px", alignItems: "center",
                       }}>
                         <div style={{
-                          width: "120px", height: "72px", borderRadius: "10px",
-                          background: `linear-gradient(135deg, ${role.color}22, #0a0f1a)`,
-                          display: "flex", alignItems: "center", justifyContent: "center",
-                          fontSize: "30px", flexShrink: 0,
-                          border: `1px solid ${role.color}22`,
-                        }}>▶️</div>
+  width: "120px", height: "72px", borderRadius: "10px",
+  overflow: "hidden", flexShrink: 0,
+  border: `1px solid ${role.color}22`,
+  background: `linear-gradient(135deg, ${role.color}22, #0a0f1a)`,
+  position: "relative",
+}}>
+  <img
+    src={pl.thumb}
+    alt={pl.title}
+    style={{
+      width: "100%", height: "100%",
+      objectFit: "cover",
+      display: "block",
+    }}
+    onError={(e) => {
+      e.target.style.display = "none";
+    }}
+  />
+</div>
                         <div style={{ flex: 1 }}>
                           <h4 style={{ fontSize: "16px", fontWeight: "700", marginBottom: "6px", color: "#f0f2f8" }}>{pl.title}</h4>
                           <p style={{ fontSize: "13px", color: "#6b7899", marginBottom: "8px" }}>📺 {pl.channel}</p>
