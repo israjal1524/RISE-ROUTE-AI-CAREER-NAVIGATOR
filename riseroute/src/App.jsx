@@ -402,7 +402,7 @@ export default function RiseRoute() {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
-            model: "claude-sonnet-4-5",
+            model: "claude-sonnet-4-20250514",
             max_tokens: 1000,
             messages: [{
               role: "user",
@@ -416,7 +416,7 @@ Make it actionable, realistic, and include estimated timeframes. Use emojis for 
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
-            model: "claude-sonnet-4-5",
+            model: "claude-sonnet-4-20250514",
             max_tokens: 1000,
             messages: [{
               role: "user",
@@ -466,6 +466,7 @@ Use emojis and make it engaging. Keep it under 500 words.`,
       background: "#050a0f",
       fontFamily: "'Sora', 'DM Sans', system-ui, sans-serif",
       color: "#e8eaf0",
+      overflow: "hidden",
       position: "relative",
     }}>
       {/* Import fonts */}
@@ -900,12 +901,25 @@ Use emojis and make it engaging. Keep it under 500 words.`,
                         borderRadius: "16px", padding: "20px", display: "flex", gap: "20px", alignItems: "center",
                       }}>
                         <div style={{
-                          width: "120px", height: "72px", borderRadius: "10px",
-                          background: `linear-gradient(135deg, ${role.color}22, #0a0f1a)`,
-                          display: "flex", alignItems: "center", justifyContent: "center",
-                          fontSize: "30px", flexShrink: 0,
-                          border: `1px solid ${role.color}22`,
-                        }}>▶️</div>
+  width: "120px", height: "72px", borderRadius: "10px",
+  overflow: "hidden", flexShrink: 0,
+  border: `1px solid ${role.color}22`,
+  background: `linear-gradient(135deg, ${role.color}22, #0a0f1a)`,
+  position: "relative",
+}}>
+  <img
+    src={pl.thumb}
+    alt={pl.title}
+    style={{
+      width: "100%", height: "100%",
+      objectFit: "cover",
+      display: "block",
+    }}
+    onError={(e) => {
+      e.target.style.display = "none";
+    }}
+  />
+</div>
                         <div style={{ flex: 1 }}>
                           <h4 style={{ fontSize: "16px", fontWeight: "700", marginBottom: "6px", color: "#f0f2f8" }}>{pl.title}</h4>
                           <p style={{ fontSize: "13px", color: "#6b7899", marginBottom: "8px" }}>📺 {pl.channel}</p>
