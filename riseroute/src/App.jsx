@@ -794,7 +794,8 @@ Use emojis and make it engaging. Keep it under 500 words.`,
                 background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.1)",
                 borderRadius: "12px", padding: "10px 18px", color: "#a8b0c8",
                 fontSize: "14px", fontWeight: "600", cursor: "pointer", fontFamily: "inherit",
-                display: "flex", alignItems: "center", gap: "8px",
+                display: "flex", alignItems: "center", gap: "8px",marginTop:"-40px"
+            
               }}>← Back</button>
 
               <div>
@@ -900,12 +901,30 @@ Use emojis and make it engaging. Keep it under 500 words.`,
                         borderRadius: "16px", padding: "20px", display: "flex", gap: "20px", alignItems: "center",
                       }}>
                         <div style={{
-                          width: "120px", height: "72px", borderRadius: "10px",
-                          background: `linear-gradient(135deg, ${role.color}22, #0a0f1a)`,
+                        width: "120px", height: "72px", borderRadius: "10px",
+                        flexShrink: 0, overflow: "hidden", position: "relative",
+                        border: `1px solid ${role.color}22`,
+                        background: `linear-gradient(135deg, ${role.color}22, #0a0f1a)`,
+                      }}>
+                        <img
+                              src={pl.thumb}
+                              alt={pl.title}
+                              onError={(e) => { e.target.style.display = "none"; }}
+                              style={{
+                                  width: "100%", height: "100%",
+                                  objectFit: "cover", display: "block",
+                                  borderRadius: "10px",
+                           }}
+                        />
+                        {/* Play button overlay */}
+                        <div style={{
+                          position: "absolute", inset: 0,
                           display: "flex", alignItems: "center", justifyContent: "center",
-                          fontSize: "30px", flexShrink: 0,
-                          border: `1px solid ${role.color}22`,
-                        }}>▶️</div>
+                          background: "rgba(0,0,0,0.3)",
+                          borderRadius: "10px",
+                          fontSize: "20px",
+                          }}>▶️</div>
+                        </div>
                         <div style={{ flex: 1 }}>
                           <h4 style={{ fontSize: "16px", fontWeight: "700", marginBottom: "6px", color: "#f0f2f8" }}>{pl.title}</h4>
                           <p style={{ fontSize: "13px", color: "#6b7899", marginBottom: "8px" }}>📺 {pl.channel}</p>
