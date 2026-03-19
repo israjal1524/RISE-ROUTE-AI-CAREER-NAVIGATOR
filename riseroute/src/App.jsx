@@ -343,7 +343,7 @@ const ROLES = [
         org: "Amazon Web Services",
         url: "https://aws.amazon.com/certification/certified-solutions-architect-associate/",
         level: "Associate",
-        badge: "☁️",
+        badge: "https://share.google/wJXnBHk630uy3JYQa",
       },
       {
         name: "Certified Kubernetes Administrator (CKA)",
@@ -958,7 +958,11 @@ Use emojis and make it engaging. Keep it under 500 words.`,
                           background: "rgba(15,20,35,0.8)", border: "1px solid rgba(255,255,255,0.07)",
                           borderRadius: "16px", padding: "24px",
                         }}>
-                          <div style={{ fontSize: "32px", marginBottom: "12px" }}>{cert.badge}</div>
+                          <div style={{ fontSize: "32px", marginBottom: "12px" }}>
+  {cert.badge.startsWith("http") ? (
+    <img src={cert.badge} alt="badge" style={{ width: "48px", height: "48px", objectFit: "contain" }} />
+  ) : cert.badge}
+</div>
                           <h4 style={{ fontSize: "15px", fontWeight: "700", marginBottom: "8px", color: "#f0f2f8", lineHeight: "1.4" }}>{cert.name}</h4>
                           <p style={{ fontSize: "12px", color: "#6b7899", marginBottom: "12px" }}>🏢 {cert.org}</p>
                           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
