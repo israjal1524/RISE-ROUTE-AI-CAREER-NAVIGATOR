@@ -44,10 +44,10 @@ After selecting a role, the platform provides curated learning resources, certif
 Open the following link in your browser:
 
 ```
-https://rise-route-ai-career-navigator.vercel.app/
+https://rise-route-ai-career-navigator-me91w5pes-vanshkalra88s-projects.vercel.app/
 ```
 
-Open https://rise-route-ai-career-navigator.vercel.app/
+Open https://rise-route-ai-career-navigator-me91w5pes-vanshkalra88s-projects.vercel.app/
 
 ---
 
