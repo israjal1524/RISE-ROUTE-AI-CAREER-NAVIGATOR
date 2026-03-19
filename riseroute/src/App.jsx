@@ -343,7 +343,7 @@ const ROLES = [
         org: "Amazon Web Services",
         url: "https://aws.amazon.com/certification/certified-solutions-architect-associate/",
         level: "Associate",
-        badge: "☁️",
+        badge: "https://share.google/wJXnBHk630uy3JYQa",
       },
       {
         name: "Certified Kubernetes Administrator (CKA)",
