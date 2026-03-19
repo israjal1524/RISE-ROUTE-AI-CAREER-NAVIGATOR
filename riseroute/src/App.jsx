@@ -462,14 +462,14 @@ Use emojis and make it engaging. Keep it under 500 words.`,
   
   //logo link
 const ORG_LOGOS = {
-  "Google Cloud": "https://logo.clearbit.com/cloud.google.com",
-  "Amazon Web Services": "https://logo.clearbit.com/aws.amazon.com",
-  "Microsoft": "https://logo.clearbit.com/microsoft.com",
-  "HashiCorp": "https://logo.clearbit.com/hashicorp.com",
-  "Linux Foundation": "https://logo.clearbit.com/linuxfoundation.org",
-  "CNCF": "https://logo.clearbit.com/cncf.io",
-  };
-
+  "Google":               "https://www.google.com/s2/favicons?domain=google.com&sz=64",
+  "Google Cloud":         "https://www.google.com/s2/favicons?domain=cloud.google.com&sz=64",
+  "Amazon Web Services":  "https://www.google.com/s2/favicons?domain=aws.amazon.com&sz=64",
+  "Microsoft":            "https://www.google.com/s2/favicons?domain=microsoft.com&sz=64",
+  "HashiCorp":            "https://www.google.com/s2/favicons?domain=hashicorp.com&sz=64",
+  "Linux Foundation":     "https://www.google.com/s2/favicons?domain=linuxfoundation.org&sz=64",
+  "CNCF":                 "https://www.google.com/s2/favicons?domain=cncf.io&sz=64",
+};
 
   return (
     <div style={{
