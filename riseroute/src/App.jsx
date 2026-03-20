@@ -460,7 +460,7 @@ Use emojis and make it engaging. Keep it under 500 words.`,
 
   const role = selectedRole;
   
-  //logo link
+  //logo links
 const ORG_LOGOS = {
   "Google":               "https://www.google.com/s2/favicons?domain=google.com&sz=64",
   "Google Cloud":         "https://www.google.com/s2/favicons?domain=cloud.google.com&sz=64",
@@ -472,7 +472,7 @@ const ORG_LOGOS = {
   "Oracle":               "https://www.google.com/s2/favicons?domain=oracle.com&sz=64",
   "Meta":                 "https://www.google.com/s2/favicons?domain=meta.com&sz=64",
   "freeCodeCamp":         "https://www.google.com/s2/favicons?domain=freecodecamp.com&sz=64",
-  "IBM":                  "https://www.google.com/s2/favicons?domain=ibm.com&sz=64",
+  "IBM":                  "https://logo.clearbit.com/ibm.com",
 };
 
   return (
