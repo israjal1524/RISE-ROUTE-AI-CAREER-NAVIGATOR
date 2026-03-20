@@ -163,11 +163,11 @@ const ROLES = [
         badge: "📘",
       },
       {
-        name: "IBM Full Stack Software Developer Certificate",
-        org: "IBM",
-        url: "https://www.coursera.org/professional-certificates/ibm-full-stack-cloud-developer",
+        name: "MongoDB Node.js Developer Path",
+        org: "MongoDB",
+        url: "https://learn.mongodb.com/catalog",
         level: "Professional",
-        badge: "🔵",
+        badge: "🍃",
       },
       {
         name: "freeCodeCamp Full Stack Certification",
@@ -472,7 +472,7 @@ const ORG_LOGOS = {
   "Oracle":               "https://www.google.com/s2/favicons?domain=oracle.com&sz=64",
   "Meta":                 "https://www.google.com/s2/favicons?domain=meta.com&sz=64",
   "freeCodeCamp":         "https://www.google.com/s2/favicons?domain=freecodecamp.com&sz=64",
-  "IBM":                  "https://logo.clearbit.com/ibm.com",
+  "MongoDB":              "https://www.google.com/s2/favicons?domain=mongodb.com&sz=64",
 };
 
   return (
