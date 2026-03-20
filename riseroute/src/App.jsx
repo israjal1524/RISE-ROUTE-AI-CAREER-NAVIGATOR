@@ -163,7 +163,7 @@ const ROLES = [
         badge: "📘",
       },
       {
-        name: "IBM Full Stack Software Developer",
+        name: "IBM Full Stack Software Developer Certificate",
         org: "IBM",
         url: "https://www.coursera.org/professional-certificates/ibm-full-stack-cloud-developer",
         level: "Professional",
@@ -471,6 +471,7 @@ const ORG_LOGOS = {
   "CNCF":                 "https://www.google.com/s2/favicons?domain=cncf.io&sz=64",
   "Oracle":               "https://www.google.com/s2/favicons?domain=oracle.com&sz=64",
   "Meta":                 "https://www.google.com/s2/favicons?domain=meta.com&sz=64",
+  "freeCodeCamp":         "https://www.google.com/s2/favicons?domain=freecodecamp.com&sz=64",
 };
 
   return (
