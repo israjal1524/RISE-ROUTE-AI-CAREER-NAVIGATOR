@@ -95,7 +95,7 @@ const ROLES = [
     ],
     certifications: [
       {
-        name: "TensorFlow Developer Certificate",
+        name: "Google TensorFlow Developer Certificate",
         org: "Google",
         url: "https://www.tensorflow.org/certificate",
         level: "Professional",
