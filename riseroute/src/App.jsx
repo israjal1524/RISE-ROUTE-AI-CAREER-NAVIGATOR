@@ -801,13 +801,21 @@ const ORG_LOGOS = {
               display: "flex", alignItems: "center", gap: "20px", marginBottom: "36px",
               animation: "fadeSlideUp 0.5s ease forwards",
             }}>
+              {selectedRole && (
               <button onClick={handleBack} style={{
-                background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.1)",
-                borderRadius: "12px", padding: "10px 18px", color: "#a8b0c8",
-                fontSize: "14px", fontWeight: "600", cursor: "pointer", fontFamily: "inherit",
-                display: "flex", alignItems: "center", gap: "8px",marginTop:"-40px"
-            
-              }}>← Back</button>
+                      position: "fixed", top: "80px", left: "24px", zIndex: 200,
+                      background: "rgba(10,15,25,0.85)", border: "1px solid rgba(255,255,255,0.12)",
+                      borderRadius: "12px", padding: "10px 18px", color: "#a8b0c8",
+                      fontSize: "14px", fontWeight: "600", cursor: "pointer", fontFamily: "inherit",
+                      display: "flex", alignItems: "center", gap: "8px",
+                      backdropFilter: "blur(12px)",
+                      boxShadow: "0 4px 20px rgba(0,0,0,0.4)",
+                      transition: "all 0.2s ease",
+                      }}
+                      onMouseEnter={e => e.currentTarget.style.color = "#fff"}
+                      onMouseLeave={e => e.currentTarget.style.color = "#a8b0c8"}
+                    >← Back</button>
+              )}
 
               <div>
                 <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
