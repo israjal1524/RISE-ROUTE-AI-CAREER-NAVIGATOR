@@ -472,6 +472,7 @@ const ORG_LOGOS = {
   "Oracle":               "https://www.google.com/s2/favicons?domain=oracle.com&sz=64",
   "Meta":                 "https://www.google.com/s2/favicons?domain=meta.com&sz=64",
   "freeCodeCamp":         "https://www.google.com/s2/favicons?domain=freecodecamp.com&sz=64",
+  "IBM":                  "https://www.google.com/s2/favicons?domain=ibm.com&sz=64",
 };
 
   return (
