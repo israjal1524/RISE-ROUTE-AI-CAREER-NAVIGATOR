@@ -136,21 +136,21 @@ const ROLES = [
         title: "Full Stack Web Dev Bootcamp 2024",
         channel: "Traversy Media",
         url: "https://www.youtube.com/watch?v=nu_pCVPKzTk",
-        views: "7.3M views",
+        views: "7M+ views",
         thumb: "https://i.ytimg.com/vi/nu_pCVPKzTk/hqdefault.jpg",
       },
       {
         title: "MERN Stack Full Course – Project Based",
         channel: "JavaScript Mastery",
         url: "https://www.youtube.com/watch?v=O3BUHwfHf84",
-        views: "3.9M views",
+        views: "3M+ views",
         thumb: "https://i.ytimg.com/vi/O3BUHwfHf84/hqdefault.jpg",
       },
       {
         title: "React + Node.js Full Stack App 2024",
         channel: "Academind",
         url: "https://www.youtube.com/watch?v=7CqJlxBYj-M",
-        views: "2.6M views",
+        views: "2M+ views",
         thumb: "https://i.ytimg.com/vi/7CqJlxBYj-M/hqdefault.jpg",
       },
     ],
@@ -470,6 +470,7 @@ const ORG_LOGOS = {
   "Linux Foundation":     "https://www.google.com/s2/favicons?domain=linuxfoundation.org&sz=64",
   "CNCF":                 "https://www.google.com/s2/favicons?domain=cncf.io&sz=64",
   "Oracle":               "https://www.google.com/s2/favicons?domain=oracle.com&sz=64",
+  "Meta":                 "https://www.google.com/s2/favicons?domain=meta.com&sz=64",
 };
 
   return (
