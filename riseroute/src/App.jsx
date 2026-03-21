@@ -269,11 +269,11 @@ const ROLES = [
         thumb: "https://i.ytimg.com/vi/qiQR5rTSshw/hqdefault.jpg",
       },
       {
-        title: "Cybersecurity Roadmap & Career Guide",
-        channel: "NetworkChuck",
-        url: "https://www.youtube.com/watch?v=o4-U51lbcrs",
-        views: "3.2M views",
-        thumb: "https://i.ytimg.com/vi/o4-U51lbcrs/hqdefault.jpg",
+        title: "Cybersecurity Full Course 2026",
+        channel: "Simplilearn",
+        url: "https://youtu.be/TYG005runIk",
+        views: "10k+ views",
+        thumb: "https://img.youtube.com/vi/TYG005runIk/hqdefault.jpg",
       },
     ],
     certifications: [
