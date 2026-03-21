@@ -258,14 +258,14 @@ const ROLES = [
         title: "Ethical Hacking Full Course 2024",
         channel: "freeCodeCamp",
         url: "https://www.youtube.com/watch?v=3Kq1MIfTWCE",
-        views: "9.1M views",
+        views: "9M+ views",
         thumb: "https://i.ytimg.com/vi/3Kq1MIfTWCE/hqdefault.jpg",
       },
       {
         title: "CompTIA Security+ Full Course",
         channel: "Professor Messer",
         url: "https://www.youtube.com/watch?v=qiQR5rTSshw",
-        views: "5.7M views",
+        views: "5M+ views",
         thumb: "https://i.ytimg.com/vi/qiQR5rTSshw/hqdefault.jpg",
       },
       {
