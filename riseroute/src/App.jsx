@@ -285,8 +285,8 @@ const ROLES = [
         badge: "💀",
       },
       {
-        name: "Pre-Security",
-        org: "TryHackMe",
+        name: "Pre-Security (Cyber Security) Certification For 2026",
+        org: "Try Hack Me",
         url: "https://tryhackme.com/certification/pre-security",
         level: "Beginner",
         badge: "🟢",
