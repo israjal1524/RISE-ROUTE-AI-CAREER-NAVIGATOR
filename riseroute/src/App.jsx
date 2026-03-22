@@ -119,8 +119,8 @@ const ROLES = [
     jobs: [
       { title: "ML Engineer @ OpenAI", url: "https://openai.com/careers", salary: "$150K–250K" },
       { title: "AI Researcher @ Google DeepMind", url: "https://careers.google.com/jobs/results/?q=machine+learning", salary: "₹30–80 LPA" },
-      { title: "Data Scientist @ Flipkart", url: "https://www.flipkartcareers.com/", salary: "₹15–40 LPA" },
-      { title: "ML Engineer @ Fractal Analytics", url: "https://fractal.ai/careers/", salary: "₹12–30 LPA" },
+      { title: "Data Scientist @ Flipkart", url: "https://www.flipkartcareers.com/", salary: "₹15~40 LPA" },
+      { title: "ML Engineer @ Fractal Analytics", url: "https://fractal.ai/careers/", salary: "₹12~30 LPA" },
     ],
   },
   {
@@ -178,10 +178,10 @@ const ROLES = [
       },
     ],
     jobs: [
-      { title: "Full Stack Dev @ Razorpay", url: "https://razorpay.com/jobs/", salary: "₹12–30 LPA" },
-      { title: "SDE @ Swiggy", url: "https://careers.swiggy.com/", salary: "₹15–35 LPA" },
-      { title: "Full Stack Engineer @ Zomato", url: "https://www.zomato.com/careers", salary: "₹12–28 LPA" },
-      { title: "React Developer @ Toptal", url: "https://www.toptal.com/developers/join", salary: "$80K–140K" },
+      { title: "Full Stack Dev @ Razorpay", url: "https://razorpay.com/jobs/", salary: "₹12~30 LPA" },
+      { title: "SDE @ Swiggy", url: "https://careers.swiggy.com/", salary: "₹15~35 LPA" },
+      { title: "Full Stack Engineer @ Zomato", url: "https://www.zomato.com/careers", salary: "₹12~28 LPA" },
+      { title: "React Developer @ Toptal", url: "https://www.toptal.com/developers/join", salary: "$80K~140K" },
     ],
   },
   {
@@ -239,10 +239,10 @@ const ROLES = [
       },
     ],
     jobs: [
-      { title: "Data Scientist @ CRED", url: "https://careers.cred.club/", salary: "₹15–35 LPA" },
-      { title: "Analyst @ McKinsey & Company", url: "https://www.mckinsey.com/careers", salary: "₹18–50 LPA" },
-      { title: "Data Engineer @ PhonePe", url: "https://careers.phonepe.com/", salary: "₹12–30 LPA" },
-      { title: "BI Analyst @ Deloitte", url: "https://www2.deloitte.com/in/en/careers.html", salary: "₹8–20 LPA" },
+      { title: "Data Scientist @ CRED", url: "https://careers.cred.club/", salary: "₹15~35 LPA" },
+      { title: "Analyst @ McKinsey & Company", url: "https://www.mckinsey.com/careers", salary: "₹18~50 LPA" },
+      { title: "Data Engineer @ PhonePe", url: "https://careers.phonepe.com/", salary: "₹12~30 LPA" },
+      { title: "BI Analyst @ Deloitte", url: "https://www2.deloitte.com/in/en/careers.html", salary: "₹8~20 LPA" },
     ],
   },
   {
@@ -300,10 +300,10 @@ const ROLES = [
       },
     ],
     jobs: [
-      { title: "Security Analyst @ Wipro CyberSec", url: "https://careers.wipro.com/", salary: "₹8–20 LPA" },
-      { title: "Penetration Tester @ HackerOne", url: "https://www.hackerone.com/company/jobs", salary: "$90K–160K" },
-      { title: "SOC Analyst @ IBM Security", url: "https://www.ibm.com/employment/", salary: "₹10–25 LPA" },
-      { title: "InfoSec Engineer @ Paytm", url: "https://paytm.com/careers", salary: "₹12–28 LPA" },
+      { title: "Security Analyst @ Wipro CyberSec", url: "https://careers.wipro.com/", salary: "₹8~20 LPA" },
+      { title: "Penetration Tester @ HackerOne", url: "https://www.hackerone.com/company/jobs", salary: "$90K~160K" },
+      { title: "SOC Analyst @ IBM Security", url: "https://www.ibm.com/employment/", salary: "₹10~25 LPA" },
+      { title: "InfoSec Engineer @ Paytm", url: "https://paytm.com/careers", salary: "₹12~28 LPA" },
     ],
   },
   {
@@ -361,10 +361,10 @@ const ROLES = [
       },
     ],
     jobs: [
-      { title: "DevOps Engineer @ Microsoft Azure", url: "https://careers.microsoft.com/", salary: "₹15–40 LPA" },
-      { title: "Cloud Architect @ Accenture", url: "https://www.accenture.com/in-en/careers", salary: "₹18–50 LPA" },
-      { title: "SRE @ Netflix", url: "https://jobs.netflix.com/", salary: "$130K–220K" },
-      { title: "Cloud Engineer @ HCL Tech", url: "https://www.hcltech.com/careers", salary: "₹8–20 LPA" },
+      { title: "DevOps Engineer @ Microsoft Azure", url: "https://careers.microsoft.com/", salary: "₹15~40 LPA" },
+      { title: "Cloud Architect @ Accenture", url: "https://www.accenture.com/in-en/careers", salary: "₹18~50 LPA" },
+      { title: "SRE @ Netflix", url: "https://jobs.netflix.com/", salary: "$130K~220K" },
+      { title: "Cloud Engineer @ HCL Tech", url: "https://www.hcltech.com/careers", salary: "₹8~20 LPA" },
     ],
   },
 ];
@@ -398,11 +398,10 @@ export default function RiseRoute() {
     setAiContent({ roadmap: "", market: "" });
     try {
       const [roadmapRes, marketRes] = await Promise.all([
-        fetch("https://api.anthropic.com/v1/messages", {
+        fetch("http://localhost:3001/api/claude", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
-            model: "claude-sonnet-4-5",
             max_tokens: 1000,
             messages: [{
               role: "user",
@@ -412,11 +411,10 @@ Make it actionable, realistic, and include estimated timeframes. Use emojis for 
             }],
           }),
         }),
-        fetch("https://api.anthropic.com/v1/messages", {
+        fetch("http://localhost:3001/api/claude", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
-            model: "claude-sonnet-4-5",
             max_tokens: 1000,
             messages: [{
               role: "user",
