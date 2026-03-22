@@ -649,13 +649,26 @@ const ORG_LOGOS = {
           background: "rgba(5,10,15,0.8)",
           position: "sticky", top: 0, zIndex: 100,
         }}>
-          <div style={{ display: "flex", alignItems: "center", gap: "12px", cursor: "pointer" }} onClick={handleBack}>
-            <div style={{
-              width: "36px", height: "36px", borderRadius: "10px",
-              background: "linear-gradient(135deg, #7b2fff, #00f5d4)",
-              display: "flex", alignItems: "center", justifyContent: "center",
-              fontSize: "18px",
-            }}>🚀</div>
+        <div style={{ display: "flex", alignItems: "center", gap: "12px", cursor: "pointer" }} onClick={handleBack}>
+          <svg width="36" height="36" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="rr-g1" x1="0" y1="0" x2="72" y2="72" gradientUnits="userSpaceOnUse">
+                <stop offset="0%"   stopColor="#c084fc"/>
+                <stop offset="45%"  stopColor="#f472b6"/>
+                <stop offset="100%" stopColor="#818cf8"/>
+              </linearGradient>
+              <linearGradient id="rr-g2" x1="0" y1="0" x2="72" y2="72" gradientUnits="userSpaceOnUse">
+                <stop offset="0%"   stopColor="#7c3aed"/>
+                <stop offset="100%" stopColor="#be185d"/>
+              </linearGradient>
+            </defs>
+              <rect width="72" height="72" rx="20" fill="url(#rr-g2)" opacity=".18"/>
+              <rect width="72" height="72" rx="20" fill="none" stroke="url(#rr-g1)" strokeWidth="1.4" opacity=".55"/>
+              <text x="7" y="52" fontFamily="Georgia, serif" fontSize="42" fontWeight="700" fill="url(#rr-g1)">R</text>
+              <text x="30" y="52" fontFamily="Georgia, serif" fontSize="42" fontWeight="700" fill="url(#rr-g1)" opacity=".65">R</text>
+              <circle cx="60" cy="14" r="5" fill="#f472b6"/>
+              <circle cx="60" cy="14" r="9" fill="#f472b6" opacity=".18"/>
+          </svg>
             <span style={{
               fontSize: "22px", fontWeight: "800", letterSpacing: "-0.5px",
               background: "linear-gradient(135deg, #fff 30%, #7b2fff)",
