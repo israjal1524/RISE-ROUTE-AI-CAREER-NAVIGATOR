@@ -392,69 +392,53 @@ export default function RiseRoute() {
     setParticles(p);
     setTimeout(() => setAnimIn(true), 100);
   }, []);
+const fetchAIContent = async (role) => {
+  setLoading(true);
+  setAiContent({ roadmap: "", market: "" });
 
-  const fetchAIContent = async (role) => {
-    setLoading(true);
-    setAiContent({ roadmap: "", market: "" });
-    try {
-      const [roadmapRes, marketRes] = await Promise.all([
-        fetch("http://localhost:3001/api/claude", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            max_tokens: 1000,
-            messages: [{
-              role: "user",
-              content: `Create a detailed, structured learning roadmap for becoming a ${role.title}. 
+  const ANTHROPIC_API_KEY = "sk-ant-2004"; // 🔑 paste your key here
+
+  const callClaude = async (content) => {
+    const res = await fetch("https://api.anthropic.com/v1/messages", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "x-api-key": ANTHROPIC_API_KEY,
+        "anthropic-version": "2023-06-01",
+        "anthropic-dangerous-direct-browser-access": "true", // ← this is the magic line
+      },
+      body: JSON.stringify({
+        model: "claude-sonnet-4-20250514",
+        max_tokens: 1000,
+        messages: [{ role: "user", content }],
+      }),
+    });
+    const data = await res.json();
+    return data.content?.[0]?.text || "Unable to generate content.";
+  };
+
+  try {
+    const [roadmap, market] = await Promise.all([
+      callClaude(`Create a detailed, structured learning roadmap for becoming a ${role.title}. 
 Format it as clear phases (Phase 1, Phase 2, etc.) with specific skills, tools, and milestones for each phase. 
-Make it actionable, realistic, and include estimated timeframes. Use emojis for visual appeal. Keep it under 600 words.`,
-            }],
-          }),
-        }),
-        fetch("http://localhost:3001/api/claude", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            max_tokens: 1000,
-            messages: [{
-              role: "user",
-              content: `Analyze the current market scope and industry demand for ${role.title} in 2025-2026. 
+Make it actionable, realistic, and include estimated timeframes. Use emojis for visual appeal. Keep it under 600 words.`),
+
+      callClaude(`Analyze the current market scope and industry demand for ${role.title} in 2025-2026. 
 Cover: salary trends (India + Global), top hiring companies, in-demand skills, future outlook, remote work opportunities, and career growth paths. 
-Use emojis and make it engaging. Keep it under 500 words.`,
-            }],
-          }),
-        }),
-      ]);
+Use emojis and make it engaging. Keep it under 500 words.`),
+    ]);
 
-      const roadmapData = await roadmapRes.json();
-      const marketData = await marketRes.json();
+    setAiContent({ roadmap, market });
+  } catch (e) {
+    console.error(e);
+    setAiContent({
+      roadmap: "⚠️ Could not load AI roadmap. Please check your API key.",
+      market: "⚠️ Could not load market analysis. Please check your API key.",
+    });
+  }
 
-      setAiContent({
-        roadmap: roadmapData.content?.[0]?.text || "Unable to generate roadmap. Please try again.",
-        market: marketData.content?.[0]?.text || "Unable to generate market analysis. Please try again.",
-      });
-    } catch (e) {
-      setAiContent({
-        roadmap: "⚠️ Could not load AI roadmap. Please check your connection.",
-        market: "⚠️ Could not load market analysis. Please check your connection.",
-      });
-    }
-    setLoading(false);
-  };
-
-  const handleRoleSelect = (role) => {
-    setSelectedRole(role);
-    setActiveTab(0);
-    fetchAIContent(role);
-    setTimeout(() => {
-      resultRef.current?.scrollIntoView({ behavior: "smooth" });
-    }, 100);
-  };
-
-  const handleBack = () => {
-    setSelectedRole(null);
-    setAiContent({ roadmap: "", market: "" });
-  };
+  setLoading(false);
+};
 
   const role = selectedRole;
   
